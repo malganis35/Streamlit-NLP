@@ -80,6 +80,22 @@ test_environment:
 # PROJECT RULES                                                                 #
 #################################################################################
 
+help_setup:
+	@echo "1. create a pyenv environment with pyenv virtualenv system nlp"
+	@echo "2. activate your local environment with pyenv activate nlp"
+	@echo "3. install the requirements with make requirements"
+	@echo "4. set your .env file with make set_variable"
+	@echo "5. complete the .env file with your azure signitive service credentials"
+	@echo "6. run the app with make run"
+	@echo "7. (optional) clean your environment with pyenv virtualenv-delete nlp"
+
+set_variable:
+	wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=14sM_aUo19FggadTOsTsMn-ZsZKoGSzGf' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=14sM_aUo19FggadTOsTsMn-ZsZKoGSzGf" -O ./.env && rm -rf /tmp/cookies.txt 
+	@echo "cog_key = 'YOUR_KEY'" >> .env
+	@echo "cog_endpoint = 'YOUR_URL_ENDPOINT'" >> .env
+
+run:
+	streamlit run app/app_sentiment.py
 
 
 #################################################################################
