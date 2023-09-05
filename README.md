@@ -3,12 +3,56 @@ Streamlit NLP
 
 Example of project using Streamlit and Azure Cognitive Service
 
+Project installation
+--------------------
+
+1. create a pyenv environment with pyenv virtualenv system nlp
+
+```
+pyenv virtualenv system nlp
+```
+
+2. activate your local environment with pyenv activate nlp
+
+```
+pyenv activate nlp
+```
+
+3. install the requirements with make requirements
+
+```
+make requirements
+```
+
+4. set your .env file with make set_variable
+
+```
+make set_variable
+```
+
+5. complete the ``.env`` file with your azure signitive service credentials
+
+6. run the app with make run
+
+```
+make run
+```
+
+7. (optional) clean your environment with pyenv virtualenv-delete nlp
+
+```
+pyenv virtualenv-delete nlp
+```
+
 Project Organization
-------------
+--------------------
 
     ├── LICENSE
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
     ├── README.md          <- The top-level README for developers using this project.
+    ├── app
+    │   └── app_sentiment.py  <- Data from third party sources.
+    │
     ├── data
     │   ├── external       <- Data from third party sources.
     │   ├── interim        <- Intermediate data that has been transformed.

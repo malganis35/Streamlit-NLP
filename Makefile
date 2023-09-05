@@ -80,6 +80,7 @@ test_environment:
 # PROJECT RULES                                                                 #
 #################################################################################
 
+## Initial setup to follow
 help_setup:
 	@echo "1. create a pyenv environment with pyenv virtualenv system nlp"
 	@echo "2. activate your local environment with pyenv activate nlp"
@@ -89,11 +90,13 @@ help_setup:
 	@echo "6. run the app with make run"
 	@echo "7. (optional) clean your environment with pyenv virtualenv-delete nlp"
 
+## Set the variables for Python scripts
 set_variable:
 	wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=14sM_aUo19FggadTOsTsMn-ZsZKoGSzGf' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=14sM_aUo19FggadTOsTsMn-ZsZKoGSzGf" -O ./.env && rm -rf /tmp/cookies.txt 
 	@echo "cog_key = 'YOUR_KEY'" >> .env
 	@echo "cog_endpoint = 'YOUR_URL_ENDPOINT'" >> .env
 
+## Run the demo app
 run:
 	streamlit run app/app_sentiment.py
 
