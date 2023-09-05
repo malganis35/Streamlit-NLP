@@ -44,6 +44,11 @@ make run
 pyenv virtualenv-delete nlp
 ```
 
+Project Demo
+------------
+![Alt text](docs/images/streamlit_app.PNG)
+
+
 Project Organization
 --------------------
 
