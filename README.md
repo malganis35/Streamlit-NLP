@@ -44,6 +44,25 @@ make run
 pyenv virtualenv-delete nlp
 ```
 
+Project installation (with Docker)
+----------------------------------
+
+We provide here a ``Dockerfile`` to run this application into a Docker container
+
+1. Pre-requisite: have docker install on your machine
+
+2. Build the docker image using:
+
+```
+docker build -t streamlitapp:latest .
+```
+
+2. Run the docker container using:
+
+```
+docker run -p 8501:8501 streamlitapp:latest
+```
+
 Project Demo
 ------------
 ![Alt text](docs/images/streamlit_app.PNG)
